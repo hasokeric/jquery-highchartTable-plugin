@@ -161,6 +161,7 @@
               color:   column.dataLabelsColor,
               align:   $table.data('graph-datalabels-align') || 'center'
             }
+			// HASO
           });
         }
       });
@@ -390,6 +391,9 @@
                 return '<b>'+ this.series.name +'</b><br/>'+  Highcharts.dateFormat('%e. %b', this.x) +' : '+ this.y;
               } else {
                 var xValue = typeof xValues[this.point.x] != 'undefined' ? xValues[this.point.x] : this.point.x;
+				if (globalGraphType === 'pie') {
+					return '<strong>' + this.series.name + '</strong><br />' + xValue + ' : '  + this.point.y;
+                }
                 return '<strong>' + this.series.name + '</strong><br />' + xValue + ' : '  + this.point.name;
               }
             }
@@ -414,7 +418,7 @@
             dataLabels: {
               enabled: true
             },
-            showInLegend: 0,
+            showInLegend: $table.data('graph-legend-disabled') != '1',
             size:         '80%'
           },
           series: {
