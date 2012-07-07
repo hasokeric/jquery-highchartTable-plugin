@@ -345,12 +345,19 @@
           text: $table.data('graph-subtitle-text') || ''
         },
         legend: {
-          enabled:     $table.data('graph-legend-disabled') != '1',
-          layout:      $table.data('graph-legend-layout') || 'horizontal',
-          symbolWidth: $table.data('graph-legend-width') || 30,
-          x:           $table.data('graph-legend-x') || 15,
-          y:           $table.data('graph-legend-y') || 0
+		  align: 			$table.data('graph-legend-align') || null,
+		  verticalAlign: 	$table.data('graph-legend-valign') || null,
+		  width: 			$table.data('graph-legend-width') || null,
+		  borderWidth: 		$table.data('graph-legend-border-width') || null,
+          enabled:     		$table.data('graph-legend-disabled') != '1',
+          layout:      		$table.data('graph-legend-layout') || 'horizontal',
+          symbolWidth: 		$table.data('graph-legend-symbol-width') || 30,
+          x:           		$table.data('graph-legend-x') || 15,
+          y:           		$table.data('graph-legend-y') || 0
         },
+		
+		
+		
         xAxis: {
           categories:             ($table.data('graph-xaxis-type') != 'datetime') ? xValues : undefined,
           type:                   ($table.data('graph-xaxis-type') == 'datetime') ? 'datetime' :  undefined,
