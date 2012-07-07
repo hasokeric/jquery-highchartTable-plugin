@@ -335,7 +335,8 @@
           marginLeft:   typeof marginLeft != 'undefined' ? marginLeft : null,
           spacingTop:   $table.data('graph-spacing-top') || 10,
           height:       $table.data('graph-height') || null,
-          zoomType:     $table.data('graph-zoom-type') || null
+          zoomType:     $table.data('graph-zoom-type') || null,
+		  backgroundColor: $table.data('graph-background-color') || null
         },
         title: {
           text: graphTitle
